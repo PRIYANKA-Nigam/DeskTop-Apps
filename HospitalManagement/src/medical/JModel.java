@@ -1,0 +1,77 @@
+package medical;
+
+public class JModel {
+int id,age;
+String name,gender,post,time;
+byte[] photo;
+
+
+
+public JModel() {
+	super();
+}
+public JModel(int id, int age, String name, String gender, String post, String time, byte[] photo) {
+	super();
+	this.id = id;
+	this.age = age;
+	this.name = name;
+	this.gender = gender;
+	this.post = post;
+	this.time = time;
+	this.photo = photo;
+}
+
+public JModel(int age, String name, String gender, String post, String time, byte[] photo) {
+	super();
+	this.age = age;
+	this.name = name;
+	this.gender = gender;
+	this.post = post;
+	this.time = time;
+	this.photo = photo;
+}
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public int getAge() {
+	return age;
+}
+public void setAge(int age) {
+	this.age = age;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getGender() {
+	return gender;
+}
+public void setGender(String gender) {
+	this.gender = gender;
+}
+public String getPost() {
+	return post;
+}
+public void setPost(String post) {
+	this.post = post;
+}
+public String getTime() {
+	return time;
+}
+public void setTime(String time) {
+	this.time = time;
+}
+public byte[] getPhoto() {
+	return photo;
+}
+public void setPhoto(byte[] photo) {
+	this.photo = photo;
+}
+
+
+}

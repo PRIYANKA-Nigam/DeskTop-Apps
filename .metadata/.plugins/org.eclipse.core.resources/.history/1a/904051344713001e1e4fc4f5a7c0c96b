@@ -1,0 +1,57 @@
+package medical;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class splash extends JFrame{
+	 Thread timer;
+splash(){
+	try {
+		timer=new Thread(){
+	         public void run(){
+	             try {
+	            	 
+	                 Thread.sleep(5000);
+	               
+	             } catch (InterruptedException e) {
+	                 e.printStackTrace();
+	             }
+	             finally {
+	            	 HomeForm()
+	            	dispose();
+	             }
+	         }
+	     };
+	     timer.start();
+		
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	setBounds(0,0,750,750);
+	getContentPane().setBackground(Color.WHITE);
+	setLayout(null);
+	JLabel heading = new JLabel("Hospital Management System");
+	heading.setBounds(100,30,700,30);
+	heading.setFont(new Font("Tahoma",Font.PLAIN,26));
+	add(heading);
+	JLabel image = new JLabel(new javax.swing.ImageIcon());
+	ImageIcon im = new javax.swing.ImageIcon("Image/hospital.jpg");
+	Image i = im.getImage().getScaledInstance(790, 550, Image.SCALE_SMOOTH);
+	image.setIcon(new ImageIcon(i));
+	//lblNewLabel_6.setBounds(0, 97, 809, 288);
+	image.setBounds(0, 70, 750, 450);
+	add(image);
+	
+	setVisible(true);
+}
+	public static void main(String[] args) {
+		 new splash();
+
+	}
+
+}

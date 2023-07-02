@@ -1,0 +1,38 @@
+package quiz;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Icon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class Score extends JFrame implements ActionListener{
+Score(String name,int score){
+	setBounds(400,150,750,550);
+	getContentPane().setBackground(Color.WHITE);
+	setLayout(null);
+	JLabel image = new JLabel((Icon) new javax.swing.ImageIcon("Images/score.jpg").getImage().getScaledInstance(550, 350, Image.SCALE_DEFAULT));
+	image.setBounds(100, 50, 500, 300);
+	add(image);
+	
+	JLabel qno = new JLabel();
+	qno.setBounds(100,450,50,30);
+	qno.setFont(new Font("Tahoma",Font.PLAIN,20));
+	add(qno);
+	setVisible(true); //writing this line is a must otherwise no frame will be visible
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+new Score("",0);
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		new Score("",0);
+	}
+
+}

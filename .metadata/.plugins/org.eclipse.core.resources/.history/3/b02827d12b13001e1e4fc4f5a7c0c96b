@@ -1,0 +1,220 @@
+package medical;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.swing.JTextField;
+import javax.swing.JSpinner;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+import com.mysql.cj.xdevapi.Statement;
+import javax.swing.JComboBox;
+
+public class Diagnosis extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_6;
+	private JTable table;
+	JComboBox comboBox ;
+	Connection con = null;
+	java.sql.Statement St = null;
+	ResultSet Rt = null;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Diagnosis frame = new Diagnosis();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Diagnosis() { 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 905, 610);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel contentPane_1 = new JPanel();
+		contentPane_1.setLayout(null);
+		contentPane_1.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane_1.setBounds(0, 0, 851, 749);
+		contentPane.add(contentPane_1);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.BLACK);
+		panel.setBounds(0, 0, 894, 80);
+		contentPane_1.add(panel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Diagnosis Report");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setBounds(379, 47, 175, 24);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel = new JLabel("Hospital Management System");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setBounds(285, 5, 374, 31);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel("ID");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_2.setBounds(10, 111, 46, 14);
+		contentPane_1.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_4 = new JLabel("SYMPTOMS");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_4.setBounds(256, 111, 140, 14);
+		contentPane_1.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("PATID");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_5.setBounds(10, 146, 56, 14);
+		contentPane_1.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_8 = new JLabel("NAME");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_8.setBounds(10, 181, 66, 14);
+		contentPane_1.add(lblNewLabel_8);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(89, 108, 135, 20);
+		contentPane_1.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(411, 180, 135, 20);
+		contentPane_1.add(textField_1);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(411, 108, 135, 20);
+		contentPane_1.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(89, 180, 135, 20);
+		contentPane_1.add(textField_4);
+		
+		JLabel lblNewLabel_9 = new JLabel("DIAGNOSIS");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_9.setBounds(256, 146, 117, 14);
+		contentPane_1.add(lblNewLabel_9);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(411, 145, 135, 20);
+		contentPane_1.add(textField_6);
+		
+		JButton btnNewButton = new JButton("ADD");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.setBounds(49, 221, 89, 23);
+		contentPane_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("UPDATE");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_1.setBounds(170, 221, 111, 23);
+		contentPane_1.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("DELETE");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_2.setBounds(328, 221, 103, 23);
+		contentPane_1.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("CLEAR");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_3.setBounds(475, 221, 96, 23);
+		contentPane_1.add(btnNewButton_3);
+		
+		JLabel lblNewLabel_10 = new JLabel("Patient Diagnosis");
+		lblNewLabel_10.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_10.setBounds(365, 255, 140, 14);
+		contentPane_1.add(lblNewLabel_10);
+		
+		JButton btnNewButton_4 = new JButton("HOME");
+		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_4.setBounds(395, 550, 89, 23);
+		contentPane_1.add(btnNewButton_4);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.BLACK);
+		panel_1.setBounds(10, 710, 831, 39);
+		contentPane_1.add(panel_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("MEDICINES");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_3.setBounds(256, 183, 92, 14);
+		contentPane_1.add(lblNewLabel_3);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(574, 91, 242, 181);
+		contentPane_1.add(textArea);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 270, 816, 269);
+		contentPane_1.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"id", "PATID", "NAME", "SYMPTOMS", "DIAGNOSIS", "MEDICINES"
+			}
+		));
+		
+		 comboBox = new JComboBox();
+		comboBox.setBounds(89, 144, 135, 22);
+		contentPane_1.add(comboBox);
+		GetPatient();
+	}
+	private void GetPatient() {
+		try {
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/dummy","root","");
+			St = con.createStatement();
+		String query="select * from dummy.patient";
+			ResultSet rs =St.executeQuery(query);
+			while(rs.next()) {
+				String patId = rs.getString("id");
+				comboBox.addItem(patId);
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

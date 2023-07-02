@@ -1,0 +1,65 @@
+package medical;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+public class HospitalMS extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					HospitalMS frame = new HospitalMS();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public HospitalMS() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0,0,750,750);
+		getContentPane().setBackground(Color.WHITE);
+		getContentPane().setLayout(null);
+		setVisible(true);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
+		panel.setBounds(0, 11, 213, 750);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		JLabel heading = new JLabel("Hospital Management System");
+		heading.setBounds(0,260,300,30);
+		heading.setFont(new Font("Tahoma",Font.PLAIN,16));
+		heading.setForeground(Color.white);
+		panel.add(heading);
+		JLabel image = new JLabel(new javax.swing.ImageIcon("Image/hospital.jpg"));
+		image.setBounds(20, 50, 150, 150);
+		panel.add(image);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(223, 11, 351, 427);
+		contentPane.add(panel_1);
+	}
+}

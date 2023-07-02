@@ -1,0 +1,17 @@
+package medical;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class splash extends JFrame{
+splash(){
+	JLabel image = new JLabel(new javax.swing.ImageIcon("Image/hospital.jpg"));
+	image.setBounds(0, 0, 1400, 380);
+	add(image);
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

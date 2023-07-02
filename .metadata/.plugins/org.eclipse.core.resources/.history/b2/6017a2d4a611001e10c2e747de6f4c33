@@ -1,0 +1,98 @@
+package medical;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+
+public class HospitalMS extends JFrame {
+
+	private JPanel contentPane;
+	JLabel name,mno;
+	JTextField tname,tmno;
+	
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					HospitalMS frame = new HospitalMS();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public HospitalMS() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(0,0,750,700);
+		getContentPane().setBackground(Color.WHITE);
+		getContentPane().setLayout(null);
+		setVisible(true);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
+		panel.setBounds(0, 11, 213, 700);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		JLabel heading = new JLabel("Hospital Management System");
+		heading.setBounds(0,260,300,30);
+		heading.setFont(new Font("Tahoma",Font.BOLD,12));
+		heading.setForeground(Color.white);
+		panel.add(heading);
+		JLabel image = new JLabel(new javax.swing.ImageIcon("Image/hospital.jpg"));
+		image.setBounds(25, 90, 150, 150);
+		panel.add(image);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBackground(new Color(255, 255, 255));
+		separator.setBounds(0, 290, 175, 10);
+		panel.add(separator);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(223, 11, 750, 750);
+		name = new JLabel("Name");
+        name.setFont(new Font("Arial", Font.PLAIN, 20));
+//        name.setSize(100, 20);
+//        name.setLocation(100, 100);
+        name.setBounds(0,260,30,30);
+        panel_1.add(name);
+ 
+        tname = new JTextField();
+        tname.setFont(new Font("Arial", Font.PLAIN, 15));
+//        tname.setSize(190, 20);
+//        tname.setLocation(200, 100);
+        tname.setBounds(50,260,300,30);
+        panel_1.add(tname);
+ 
+        mno = new JLabel("Mobile");
+        mno.setFont(new Font("Arial", Font.PLAIN, 20));
+//        mno.setSize(100, 20);
+//        mno.setLocation(100, 150);
+       mno.setBounds(0,60,300,30);
+        panel_1.add(mno);
+ 
+        tmno = new JTextField();
+        tmno.setFont(new Font("Arial", Font.PLAIN, 15));
+//        tmno.setSize(150, 20);
+//        tmno.setLocation(200, 150);
+        panel_1.add(tmno);
+ 
+		contentPane.add(panel_1);
+	}
+}

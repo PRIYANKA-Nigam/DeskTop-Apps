@@ -1,0 +1,182 @@
+package medical;
+
+import java.awt.EventQueue;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Image;
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JTextPane;
+import javax.swing.JButton;
+import javax.swing.JTable;
+import javax.swing.JSeparator;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
+
+public class Docter extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JPasswordField passwordField;
+	private JTable table;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Docter frame = new Docter();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Docter() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 856, 1000);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
+		panel.setBounds(10, 11, 820, 97);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Hospital Management System");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setBounds(168, 11, 434, 36);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Manage Docters");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setBackground(new Color(255, 255, 255));
+		lblNewLabel_1.setBounds(260, 58, 196, 28);
+		panel.add(lblNewLabel_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 119, 820, 611);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_2 = new JLabel("HMS");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblNewLabel_2.setBounds(360, 0, 52, 25);
+		panel_1.add(lblNewLabel_2);
+		
+		JLabel img = new JLabel("img");
+		img.setBounds(290, 20, 200, 100);
+		ImageIcon im = new javax.swing.ImageIcon("Image/aid.jpg");
+//		Image i = im.getImage().getScaledInstance(200, 150, Image.SCALE_SMOOTH);
+		img.setIcon(im);
+		panel_1.add(img);
+		
+		JLabel lblNewLabel_3 = new JLabel("ID");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_3.setBounds(40, 130, 46, 25);
+		panel_1.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Name");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_4.setBounds(40, 165, 52, 25);
+		panel_1.add(lblNewLabel_4);
+		
+		textField = new JTextField();
+		textField.setBounds(117, 135, 116, 20);
+		panel_1.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(117, 165, 116, 20);
+		panel_1.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_5 = new JLabel("Password");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_5.setBounds(340, 135, 80, 14);
+		panel_1.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Experience");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_6.setBounds(340, 186, 90, 14);
+		panel_1.add(lblNewLabel_6);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(462, 183, 122, 20);
+		panel_1.add(textField_2);
+		textField_2.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(462, 132, 122, 20);
+		panel_1.add(passwordField);
+		
+		JButton btnNewButton = new JButton("ADD");
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.setBounds(168, 232, 89, 23);
+		panel_1.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("UPDATE");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_1.setBounds(260, 232, 106, 23);
+		panel_1.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("DELETE");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_2.setBounds(369, 232, 106, 23);
+		panel_1.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("CLEAR");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_3.setBounds(485, 232, 89, 23);
+		panel_1.add(btnNewButton_3);
+		
+		JLabel lblNewLabel_7 = new JLabel("Docters Information");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_7.setBounds(314, 283, 176, 20);
+		panel_1.add(lblNewLabel_7);
+		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(new Color(160, 160, 160));
+		separator.setBackground(new Color(0, 0, 0));
+		separator.setBounds(314, 301, 161, 10);
+		panel_1.add(separator);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 310, 810, 290);
+		panel_1.add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"ID", "NAME", "PASSWORD", "EXPERIENCE"
+			}
+		));
+		
+		JButton btnNewButton_4 = new JButton("HOME");
+		btnNewButton_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton_4.setBounds(352, 726, 89, 23);
+		contentPane.add(btnNewButton_4);
+	}
+}

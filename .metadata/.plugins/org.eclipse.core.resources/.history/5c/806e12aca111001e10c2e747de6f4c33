@@ -1,0 +1,18 @@
+package medical;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+
+public class ViewIt extends JFrame{
+	ViewIt(){
+		getContentPane().setBackground(Color.WHITE);
+		setLayout(null);
+		setVisible(true);
+	}
+	public static void main(String[] args) {
+		new ViewIt();
+
+	}
+
+}

@@ -1,0 +1,182 @@
+package medical;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JRadioButton;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.DefaultListModel;
+import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class walkIn extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					walkIn frame = new walkIn();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public walkIn() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1119, 625);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.BLACK);
+		panel.setBounds(0, 0, 1093, 80);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Walk-In Staff");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_1.setBackground(Color.WHITE);
+		lblNewLabel_1.setBounds(488, 45, 175, 24);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel = new JLabel("Hospital Management System");
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblNewLabel.setBackground(Color.WHITE);
+		lblNewLabel.setBounds(384, 11, 374, 31);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel("NAME : ");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_2.setBounds(10, 106, 72, 24);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("DATE : ");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_3.setBounds(10, 214, 72, 24);
+		contentPane.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("SYMPTOMS : ");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_4.setBounds(471, 108, 107, 24);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("MEDICINES : ");
+		lblNewLabel_5.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_5.setBounds(746, 108, 107, 24);
+		contentPane.add(lblNewLabel_5);
+		
+		textField = new JTextField();
+		textField.setBounds(74, 110, 148, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(74, 218, 148, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setBounds(588, 110, 148, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setBounds(863, 110, 177, 20);
+		contentPane.add(textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel lblNewLabel_6 = new JLabel("GENDER : ");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_6.setBounds(10, 154, 82, 24);
+		contentPane.add(lblNewLabel_6);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("MALE");
+		rdbtnNewRadioButton.setFont(new Font("Tahoma", Font.BOLD, 12));
+		rdbtnNewRadioButton.setBounds(83, 156, 59, 23);
+		contentPane.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("FEMALE");
+		rdbtnNewRadioButton_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		rdbtnNewRadioButton_1.setBounds(83, 188, 82, 23);
+		contentPane.add(rdbtnNewRadioButton_1);
+		
+		JList list = new JList();
+		list.setBounds(10, 359, 1083, 216);
+		DefaultListModel<E> mod = new DefaultListModel();
+		
+		contentPane.add(list);
+		
+		JLabel lblNewLabel_7 = new JLabel("AGE :");
+		lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_7.setBounds(244, 115, 46, 14);
+		contentPane.add(lblNewLabel_7);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(300, 114, 142, 20);
+		contentPane.add(textField_4);
+		textField_4.setColumns(10);
+		
+		JLabel lblNewLabel_8 = new JLabel("REMARK :");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_8.setBounds(201, 158, 89, 17);
+		contentPane.add(lblNewLabel_8);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(300, 156, 454, 104);
+		contentPane.add(textArea);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setForeground(new Color(0, 0, 0));
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setBounds(10, 305, 1083, 44);
+		contentPane.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_9 = new JLabel("WALK-IN CLIENTS");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel_9.setForeground(new Color(255, 255, 255));
+		lblNewLabel_9.setBounds(438, 11, 157, 26);
+		panel_1.add(lblNewLabel_9);
+		
+		JButton btnNewButton = new JButton("SUBMIT");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				list.setModel(mod);
+				String r = "Name : "+textField.getText().toString() +"\n"+
+				           "Age : "+textField_1.getText().toString();
+				mod.addElement(r);
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 15));
+		btnNewButton.setBounds(470, 271, 108, 23);
+		contentPane.add(btnNewButton);
+	}
+}

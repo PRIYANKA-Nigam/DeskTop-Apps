@@ -1,0 +1,12 @@
+package quiz;
+
+public class Score {
+Score(String name,int score){
+	
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

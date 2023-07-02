@@ -1,0 +1,29 @@
+package medical;
+
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+public class splash extends JFrame{
+splash(){
+	setBounds(0,0,1400,850);
+	getContentPane().setBackground(Color.WHITE);
+	setLayout(null);
+	JLabel image = new JLabel(new javax.swing.ImageIcon("Image/hospital.jpg"));
+	image.setBounds(0, 0, 1400, 380);
+	add(image);
+	
+	setVisible(true);
+}
+	public static void main(String[] args) {
+new splash();
+try {
+	Thread.sleep(5000);
+	 new ViewIt();
+}catch(Exception e) {
+	e.printStackTrace();
+}
+	}
+
+}

@@ -1,0 +1,14 @@
+package medical;
+import java.util.*;
+import java.util.List;
+
+public class JModelList {
+public List<JModel> findAll(){
+	List<JModel> list = new ArrayList<JModel>();
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
